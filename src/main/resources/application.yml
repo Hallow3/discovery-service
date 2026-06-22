@@ -1,13 +1,9 @@
-server:
-  port: 8761
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-logging:
-  level:
-    org:
-      springframework:
-        web: debug
+spring:
+  application:
+    name: discovery-service
+  config:
+    import: "configserver:http://config-service:8763"
+  cloud:
+    config:
+      username: black
+      password: Brayant0067
